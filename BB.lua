@@ -1,10 +1,10 @@
 --[[
  
-	Blue Balls(°□°） v1.0
+	Yoga Ball Chase(°□°） v1.1
 	by CoreLogic 12/23/2015
 	
 	<b>[What is it?]</b>
-	A wonky new mod from the creator of Dank Souls and Flip All The Things!. <i>Blue Balls</i>, a new mini-game where NPCs spawn yoga balls players can collect to score!
+	A wonky new mod from the creator of Dank Souls and Flip All The Things!. <i>Yoga Ball Chase</i>, (formerly Blue Balls) a new mini-game where NPCs spawn yoga balls players can collect to score!
 	
 
 	<b>[How to play]</b>
@@ -19,15 +19,15 @@
 	
 	<b>[Rules]</b>
 
-	1) Dead NPCs will spawn blue balls.
+	1) Dead NPCs will spawn balls.
 	2) Players can walk over balls to pick up and score.
 	3) Balls spawn under force in the direction the NPC is looking at time of death.
 	4) Headshots mostly bring balls directly to the player, see rule #3
-	5) Wounded NPCs spawn multiple blue balls.
+	5) Wounded NPCs spawn multiple balls.
 	6) Some random balls are trolls you can't pick-up. 
 
 
-	<b>[Tips: how do I get the most Blue Balls?]</b>
+	<b>[Tips: how do I get the most Balls?]</b>
 
 	- Balls spawn under force in the direction the NPC is looking at time of death.
 	- Cars, bullets, walls any hard object will burst you balls on hard impact. 
@@ -103,7 +103,7 @@ BB.settings["force_pos_y"] = 1;				-- Direction they will be flipped on y axis
 -- ==================================================
 -- ==================================================
 BB.data = {};
-BB.data["version"] = "1.0";
+BB.data["version"] = "1.1";
 BB.data["seenPeds"] = {};
 BB.data["seenPedSkins"] = {};
 BB.data["blips"] = {};
@@ -273,7 +273,7 @@ function BB.spawnVeh(modelName)
 	STREAMING.SET_MODEL_AS_NO_LONGER_NEEDED(skin);
 end
 function BB.setupGame()
-	print("Flip All The Things v"..BB.data["version"].." by CoreLogic");
+	print("Yoga Ball Chase v"..BB.data["version"].." by CoreLogic");
 	-- let's initialize the wave counter delay (how long between Dank spawns) setting to the current level
 	BB.data["setup"] = true;
 	BB.data["game_over"] = false;
@@ -389,13 +389,13 @@ function BB.tick()
 	-- Play Game
 	-- ==========
 	if(not BB.data["playGame"]) then
-		BB.drawText(" [del] Blue Balls! v"..BB.data["version"].." - by CoreLogic 2015", 0.80, 0.0005, 0.24, false, 0,  0, 0, 0);
+		BB.drawText(" [del] Yoga Ball Chase! v"..BB.data["version"].." - by CoreLogic 2015", 0.80, 0.0005, 0.24, false, 0,  0, 0, 0);
 		--ENTITY.FREEZE_ENTITY_POSITION(PLAYER.PLAYER_PED_ID() , false);
 	else
 		if(BB.data["game_mode"] == 1) then
-			BB.drawText(" [del] off - Blue Balls: GO!", 0.80, 0.0005, 0.24, false, 0,  0, 0, 0);
+			BB.drawText(" [del] off - Yoga Ball Chase: GO!", 0.80, 0.0005, 0.24, false, 0,  0, 0, 0);
 		elseif(BB.data["game_mode"] == 2) then
-			BB.drawText(" [del] off - Blue Balls: Timed", 0.80, 0.0005, 0.24, false, 0, 255, 0, 0);
+			BB.drawText(" [del] off - Yoga Ball Chase: Timed", 0.80, 0.0005, 0.24, false, 0, 255, 0, 0);
 		--elseif(BB.data["game_mode"] == 3) then
 		--	BB.drawText(" [del] off - HardCore", 0.80, 0.0005, 0.24, false, 0,  255, 255, 255);
 		end
@@ -412,7 +412,7 @@ function BB.tick()
 			-- show game title screen when game mode not set
 			if(BB.data["game_mode"] == 0) then
 				BB.data["game_scanner"]=false;
-				BB.drawText("Blue Balls",  0.1, 0.49, 3.0, true, 1, 63, 127, 255);
+				BB.drawText("Yoga Ball Chase",  0.1, 0.49, 3.0, true, 1, 63, 127, 255);
 				BB.drawText("v:"..BB.data["version"], 0.21, 0.68, 0.3, false, 1, 255, 255, 255);
 				BB.drawText("by CoreLogic 2015", 0.24, 0.35, 0.5, false, 1, 255, 255, 255);
 				--DS.drawText("[h]elp", 0.24, 0.63, 0.5, false, 1, 255, 255, 255);
@@ -513,7 +513,7 @@ function BB.cleanAll()
 end
 function BB.unload()
 	BB.cleanAll();
-	print("Flip All The Things. - by CoreLogic");
+	print("Yoga Ball Chase - by CoreLogic");
 end
 function BB.onload()
 	print("I live...");
